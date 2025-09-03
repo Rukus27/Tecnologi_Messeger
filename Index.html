@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Empresarial</title>
+    <link rel="stylesheet" href="CSS/Styless.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header con información del usuario -->
+        <div class="chat-header">
+            <div class="user-info">
+                <img src="https://avatars.githubusercontent.com/Rukus27" alt="Avatar" class="avatar">
+                <span class="username">Rukus27</span>
+            </div>
+            <div class="timestamp">2025-09-03 21:49:28</div>
+        </div>
+
+        <!-- Área de mensajes -->
+        <div class="messages-area" id="messagesArea">
+            <!-- Los mensajes se insertarán aquí dinámicamente -->
+        </div>
+
+        <!-- Formulario para enviar mensajes -->
+        <form id="messageForm" class="message-form">
+            <input 
+                type="text" 
+                id="messageInput" 
+                placeholder="Escribe tu mensaje..." 
+                required
+            >
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+</html>
