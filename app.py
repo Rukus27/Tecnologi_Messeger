@@ -486,7 +486,7 @@ def on_join(data):
         # Unirse a la sala
         join_room(room)
         
-        print(f"✅ User {username} joined room {room}")
+        print(f" User {username} joined room {room}")
         print(f"Total connected users: {len(connected_users)}")
 
         # Notificar a la sala
@@ -510,7 +510,7 @@ def on_join(data):
         emit('room_users', {'users': room_users}, to=room)
         
     except Exception as e:
-        print(f"❌ ERROR in join_chat: {str(e)}")
+        print(f" ERROR in join_chat: {str(e)}")
         emit('error', {'message': f'Error al unirse: {str(e)}'})
 
 @socketio.on('send_message')
