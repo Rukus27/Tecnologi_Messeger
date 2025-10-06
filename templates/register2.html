@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Usuario - Paso 2</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+  <div class="contenedor">
+    <h1 class="titulo">CREAR USUARIO</h1>
+
+    <div class="pasos">
+      <div class="paso">
+        <div class="circulo activo">1</div>
+        <span class="paso-texto">Datos Personales</span>
+      </div>
+
+      <div class="linea"></div>
+
+      <div class="paso">
+        <div class="circulo activo">2</div>
+        <span class="paso-texto">Datos Usuario</span>
+      </div>
+    </div>
+
+    <div id="registerAlert"></div>
+
+    <form id="step2Form">
+      <label for="email">EMAIL CORPORATIVO:</label>
+      <input id="email" placeholder="usuario@techpaint.com" type="email" required>
+
+      <label for="password">CONTRASEÑA:</label>
+      <input id="password" placeholder="Contraseña..." minlength="8" type="password" required>
+
+      <label for="password2">REPITA LA CONTRASEÑA:</label>
+      <input id="password2" placeholder="Repita la Contraseña..." minlength="8" type="password" required>
+
+      <label for="github">GITHUB USERNAME (opcional):</label>
+      <input id="github" placeholder="tu-usuario-github" type="text">
+
+      <button class="boton" type="submit">FINALIZAR</button>
+      <a href="/register" class="form-crear">VOLVER</a>
+    </form>
+  </div>
+
+  <script src="static/js/register2.js"></script>
+</body>
+</html>

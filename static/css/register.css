@@ -1,0 +1,49 @@
+/* Centrar mejor el contenedor */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, sans-serif;
+  color: #ddd;
+}
+
+/* Ajustar el tamaño del formulario */
+.contenedor {
+  background-color: #111;
+  border: 3px solid #666;
+  border-radius: 8px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 380px; /* antes 450px */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Inputs y selects más pequeños */
+input, select {
+  width: 90%; /* antes 100% */
+  margin: 0 auto;
+  display: block;
+  padding: 8px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+/* Botón más centrado y coherente */
+.boton {
+  width: 60%; /* antes 9rem fijas */
+  margin: 1.5rem auto 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+/* Opcional: títulos más compactos */
+.titulo {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}

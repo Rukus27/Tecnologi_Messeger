@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPaint Chat - Flask</title>
+    <!-- Enlazar archivo CSS externo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji"></span>TechPaint Chat</h1>
+        
+        <!-- Formulario para unirse al chat -->
+        <div id="joinBox" class="card">
+            <h3>Unirse al Chat Empresarial</h3>
+            
+            <div class="form-group">
+                <label for="username">Tu nombre completo:</label>
+                <input id="username" type="text" placeholder="Ej: Ana García López" required maxlength="50">
+            </div>
+            
+            <div class="form-group">
+                <label for="room">Sala del proyecto:</label>
+                <input id="room" type="text" placeholder="Ej: proyecto-frontend, equipo-marketing" required maxlength="30">
+            </div>
+            
+            <button id="joinBtn">
+                <span></span> Entrar al Chat
+            </button>
+            
+            <div class="info-text">
+                 <strong>Tip:</strong> Usen la misma sala para chatear entre compañeros del mismo proyecto
+            </div>
+        </div>
+
+        <!-- Interfaz del chat -->
+        <div id="chatBox" class="card hidden">
+            <div id="chatHeader">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button id="leaveRoomBtn" class="back-button" title="Salir de la sala">
+                        <span>←</span> Salir
+                    </button>
+                    <div id="headerInfo">
+                        <span class="status-dot"></span>
+                        Conectando...
+                    </div>
+                </div>
+                <div id="onlineUsers">
+                    <div class="users-label">En línea:</div>
+                </div>
+            </div>
+            
+            <div id="messages" class="messages">
+                <div class="message system">
+                    <span class="emoji"></span> ¡Bienvenido al chat de TechPaint! Escribe tu primer mensaje.
+                </div>
+            </div>
+            
+            <div id="typingIndicator" class="typing-indicator hidden">
+                <span class="emoji"></span> <span id="typingText">Alguien está escribiendo...</span>
+            </div>
+            
+            <div class="sendRow">
+                <input id="msgInput" type="text" placeholder="Escribe tu mensaje aquí..." maxlength="500">
+                <button id="sendBtn">
+                    <span></span> Enviar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="static/js/chat.js"></script>
+</body>
+</html>

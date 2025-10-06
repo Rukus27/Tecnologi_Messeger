@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear Usuario - TechPaint</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+  <div class="contenedor">
+    <h1 class="titulo">CREAR USUARIO</h1>
+
+    <div class="pasos">
+      <div class="paso">
+        <div class="circulo activo">1</div>
+        <span class="paso-texto">Datos Personales</span>
+      </div>
+
+      <div class="linea"></div>
+
+      <div class="paso">
+        <div class="circulo inactivo">2</div>
+        <span class="paso-texto">Datos Usuario</span>
+      </div>
+    </div>
+
+    <div id="registerAlert"></div>
+
+    <form id="step1Form">
+      <label for="nombre">NOMBRE:</label>
+      <input id="nombre" placeholder="Nombre completo..." type="text" required />
+
+      <label for="apellido">APELLIDO:</label>
+      <input id="apellido" placeholder="Apellido completo..." type="text" required />
+
+      <label for="area">ÁREA DE TRABAJO:</label>
+      <select id="area" required>
+        <option value="">Selecciona tu área</option>
+        <option value="frontend">Desarrollo Frontend</option>
+        <option value="backend">Desarrollo Backend</option>
+        <option value="fullstack">Full Stack Development</option>
+        <option value="uiux">Diseño UI/UX</option>
+        <option value="devops">DevOps</option>
+        <option value="qa">Quality Assurance</option>
+        <option value="pintura-digital">Pintura Digital</option>
+        <option value="pintura-industrial">Pintura Industrial</option>
+        <option value="colorimetria">Colorimetría</option>
+      </select>
+
+      <button class="boton" type="submit">SIGUIENTE</button>
+      <a href="/login" class="form-crear">VOLVER AL LOGIN</a>
+    </form>
+  </div>
+
+  <script src="static/js/register1.js"></script>
+</body>
+</html>

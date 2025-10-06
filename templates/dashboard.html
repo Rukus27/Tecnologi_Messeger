@@ -1,0 +1,64 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPaint - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="dashboard-header">
+            <h1 class="titulo">TECHPAINT</h1>
+            <p class="subtitulo">Plataforma Interna de Colaboración</p>
+        </header>
+
+        <div class="user-welcome">
+            <div class="user-avatar-large">
+                <span id="userInitial">U</span>
+            </div>
+            <div class="user-info">
+                <h2 id="userName">Usuario</h2>
+                <p id="userArea" class="user-area">Área</p>
+            </div>
+        </div>
+
+        <div class="modulos-grid">
+            <!-- Módulo de Proyectos -->
+            <a href="/proyectos" class="modulo-card">
+                <div class="modulo-icon">📁</div>
+                <div class="modulo-content">
+                    <h3>PROYECTOS</h3>
+                    <p>Comparte y descubre proyectos GitHub de tus compañeros</p>
+                    <ul class="modulo-features">
+                        <li>• Subir proyectos GitHub</li>
+                        <li>• Sistema de votos</li>
+                        <li>• Comentarios</li>
+                    </ul>
+                </div>
+            </a>
+
+            <!-- Módulo de Mensajería -->
+            <a href="/chat/menu" class="modulo-card">
+                <div class="modulo-icon">💬</div>
+                <div class="modulo-content">
+                    <h3>MENSAJERÍA</h3>
+                    <p>Comunícate con tu equipo en tiempo real</p>
+                    <ul class="modulo-features">
+                        <li>• Chat por salas</li>
+                        <li>• Mensajes privados</li>
+                        <li>• Tiempo real</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+
+        <div class="dashboard-actions">
+            <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+body {
+  align-items: center;
+  background-color: #111;
+  color: #ddd;
+  display: flex;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  width: 100vw;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 2vh 0 1vh;
+}
+
+input, select {
+  background: transparent;
+  border: 1px solid #666;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  padding: 1vh;
+  width: 100%;
+}
+
+input:focus, select:focus {
+  border-color: #1188ff;
+}
+
+input:hover, select:hover {
+  border-color: #1188ff;
+}
+
+.contenedor {
+  background-color: #111;
+  border: 3px solid #666;
+  padding: clamp(10px, 2vh, 20px) clamp(20px, 2vw, 30px);
+  max-width: 450px;
+  width: 90%;
+}
+
+.titulo {
+  margin: 2vh;
+  text-align: center;
+}
+
+.pasos {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.paso {
+  align-items: center;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+}
+
+.circulo {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  font-weight: bold;
+  height: 25px;
+  justify-content: center;
+  margin: 5px;
+  width: 25px;
+}
+
+.activo {
+  background: #1188ff;
+  color: #111;
+}
+
+.inactivo {
+  background: #999;
+  color: #111;
+}
+
+.paso-texto {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+.linea {
+  background-color: #999;
+  height: 3px;
+  margin: 0px 2px 1rem 2px;
+  width: clamp(80px, 10vw, 100px);
+}
+
+.boton {
+  background-color: transparent;
+  border: 2px solid #666;
+  color: #ddd;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  margin: 2rem auto 0;
+  padding: 10px;
+  text-align: center;
+  width: 9rem;
+}
+
+.boton:hover {
+  background-color: #1188ff;
+  border-color: #005050;
+  color: #111;
+}
+
+.form-crear {
+  cursor: pointer;
+  color: #666;
+  text-align: center;
+  font-size: small;
+  display: block;
+  margin: 1rem auto 0;
+  text-decoration: none;
+}
+
+.form-crear:hover {
+  color: #1188ff;
+}
+
+/* Alertas */
+.alert {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.alert.success {
+  background: rgba(17, 136, 255, 0.2);
+  border: 1px solid #1188ff;
+  color: #1188ff;
+}
+
+.alert.error {
+  background: rgba(255, 68, 68, 0.2);
+  border: 1px solid #ff4444;
+  color: #ff4444;
+}

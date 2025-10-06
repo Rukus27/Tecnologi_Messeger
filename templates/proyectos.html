@@ -1,0 +1,41 @@
+<!-- templates/proyectos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - TechPaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/proyectos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📁 PROYECTOS TECHPAINT</h1>
+            <div class="user-info">
+                <span id="currentUser"></span>
+                <a href="/chat/menu" class="btn-chat">💬 Chat</a>
+                <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <!-- Formulario para nuevo proyecto -->
+        <div class="card new-project-form">
+            <h3>➕ NUEVO PROYECTO</h3>
+            <form id="projectForm">
+                <input type="text" id="projectTitle" placeholder="Título del proyecto" required>
+                <textarea id="projectDesc" placeholder="Descripción..."></textarea>
+                <input type="url" id="projectGithub" placeholder="URL de GitHub" required>
+                <input type="text" id="projectTech" placeholder="Tecnologías (separadas por coma)">
+                <button type="submit">Publicar Proyecto</button>
+            </form>
+        </div>
+
+        <!-- Feed de proyectos -->
+        <div id="projectsFeed" class="projects-feed">
+            <!-- Los proyectos se cargarán aquí -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/proyectos.js') }}"></script>
+</body>
+</html>

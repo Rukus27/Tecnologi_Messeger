@@ -1,0 +1,351 @@
+/* static/css/proyectos.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #ddd;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #666;
+}
+
+header h1 {
+    color: #1188ff;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-chat, .btn-logout {
+    background: transparent;
+    border: 1px solid #666;
+    color: #ddd;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.btn-chat:hover, .btn-logout:hover {
+    border-color: #1188ff;
+    color: #1188ff;
+}
+
+/* Card base */
+.card {
+    background-color: #111;
+    border: 2px solid #666;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.new-project-form h3 {
+    color: #1188ff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formularios */
+input, textarea, select {
+    background: transparent;
+    border: 1px solid #666;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #1188ff;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    background: transparent;
+    border: 2px solid #666;
+    color: #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #1188ff;
+    border-color: #1188ff;
+    color: #111;
+}
+
+/* Proyectos Feed */
+.projects-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #111;
+    border: 2px solid #666;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #1188ff;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.project-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #1188ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #111;
+}
+
+.user-info-small h4 {
+    margin: 0;
+    color: #1188ff;
+    font-size: 1.1em;
+}
+
+.user-area {
+    font-size: 0.85em;
+    color: #999;
+    margin: 0;
+}
+
+.project-date {
+    color: #666;
+    font-size: 0.85em;
+}
+
+.project-title {
+    color: #ddd;
+    font-size: 1.3em;
+    margin: 10px 0;
+    border-left: 3px solid #1188ff;
+    padding-left: 10px;
+}
+
+.project-description {
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background: transparent;
+    border: 1px solid #666;
+    color: #999;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+.project-github {
+    display: inline-block;
+    color: #1188ff;
+    text-decoration: none;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    padding: 5px 10px;
+}
+
+.project-github:hover {
+    background-color: #1188ff;
+    color: #111;
+}
+
+/* Sistema de Votos */
+.voting-system {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #666;
+}
+
+.vote-btn {
+    background: transparent;
+    border: 1px solid #666;
+    color: #ddd;
+    padding: 5px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.vote-btn:hover {
+    transform: translateY(-2px);
+}
+
+.like-btn:hover {
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+.dislike-btn:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.vote-btn.active {
+    background-color: #1188ff;
+    border-color: #1188ff;
+    color: #111;
+}
+
+.like-btn.active {
+    background-color: #00ff00;
+    border-color: #00ff00;
+}
+
+.dislike-btn.active {
+    background-color: #ff4444;
+    border-color: #ff4444;
+}
+
+.vote-count {
+    font-weight: bold;
+    color: #ddd;
+}
+
+/* Comentarios */
+.comments-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #666;
+}
+
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment {
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #666;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-user {
+    font-weight: bold;
+    color: #1188ff;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 0.85em;
+}
+
+.comment-text {
+    color: #ddd;
+    line-height: 1.4;
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    color: #666;
+    padding: 40px 20px;
+}
+
+.empty-state .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .comment-form {
+        flex-direction: column;
+    }
+}

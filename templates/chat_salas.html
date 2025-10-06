@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Salas - TechPaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat_salas.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💬 CHAT DE SALAS</h1>
+            <div class="user-info">
+                <span id="currentUser">Usuario</span>
+                <a href="/chat/menu" class="btn-menu">← Menú</a>
+                <button id="logoutBtn" class="btn-logout">Salir</button>
+            </div>
+        </header>
+
+        <!-- Formulario para unirse a sala -->
+        <div id="joinSection" class="join-section">
+            <div class="card">
+                <h3>Unirse a una Sala</h3>
+                <p>Ingresa el nombre de la sala para chatear con tu equipo</p>
+                
+                <div class="form-group">
+                    <label for="roomName">NOMBRE DE LA SALA:</label>
+                    <input type="text" id="roomName" placeholder="Ej: proyecto-frontend, equipo-backend" required>
+                    <small>Usa el mismo nombre que tus compañeros para reunirse</small>
+                </div>
+
+                <button id="joinBtn" class="btn-primary">Entrar a la Sala</button>
+            </div>
+        </div>
+
+        <!-- Interfaz del chat -->
+        <div id="chatSection" class="chat-section hidden">
+            <div class="chat-header">
+                <div class="room-info">
+                    <span class="status-dot"></span>
+                    <h3 id="roomTitle">Sala: <span id="currentRoom"></span></h3>
+                </div>
+                <div class="header-actions">
+                    <span id="userCount">0 usuarios</span>
+                    <button id="leaveBtn" class="btn-secondary">Salir de la Sala</button>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <!-- Mensajes -->
+                <div id="messagesContainer" class="messages-container">
+                    <div class="system-message">
+                        💬 Bienvenido al chat. Los mensajes son en tiempo real.
+                    </div>
+                </div>
+
+                <!-- Indicador de escritura -->
+                <div id="typingIndicator" class="typing-indicator hidden">
+                    <span id="typingText"></span> está escribiendo...
+                </div>
+
+                <!-- Área de envío -->
+                <div class="message-input-area">
+                    <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." maxlength="500">
+                    <button id="sendBtn" class="btn-send">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/chat_salas.js') }}"></script>
+
+
+    <script>
+        // Verificar que Socket.IO se cargó
+        if (typeof io === 'undefined') {
+            console.error('Socket.IO no se cargó correctamente');
+            alert('Error: No se pudo cargar el chat. Recarga la página.');
+        } else {
+            console.log('Socket.IO cargado correctamente');
+        }
+    </script>
+
+</body>
+</html>

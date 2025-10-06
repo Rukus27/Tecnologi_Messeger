@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Privado - TechPaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat_privado.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CHAT PRIVADO</h1>
+            <div class="user-info" id="currentUserInfo">
+                <span id="currentUserName"></span>
+            </div>
+            <a href="/chat/menu" class="btn-volver">← Volver al Menú</a>
+        </div>
+
+        <div class="chat-container">
+            <!-- Lista de conversaciones -->
+            <div class="conversaciones-panel">
+                <div class="panel-header">
+                    <h3>CONVERSACIONES</h3>
+                    <button class="btn-nuevo-chat" id="btnNuevoChat">+</button>
+                </div>
+                
+                <div class="buscar-usuario">
+                    <input type="text" id="searchUser" placeholder="Buscar usuario...">
+                </div>
+                
+                <div class="conversaciones-lista" id="conversacionesLista">
+                    <!-- Las conversaciones se cargarán aquí -->
+                </div>
+            </div>
+
+            <!-- Área de mensajes -->
+            <div class="mensajes-panel">
+                <div id="noConversacion" class="no-conversacion">
+                    <div class="icono-grande">💬</div>
+                    <p>Selecciona una conversación o inicia una nueva</p>
+                </div>
+
+                <div id="chatActivo" class="chat-activo hidden">
+                    <div class="chat-header">
+                        <div class="destinatario-info">
+                            <div class="avatar">?</div>
+                            <div>
+                                <h3 id="destinatarioNombre"></h3>
+                                <span id="destinatarioArea" class="area-badge"></span>
+                            </div>
+                        </div>
+                        <button class="btn-cerrar-chat" id="btnCerrarChat">×</button>
+                    </div>
+
+                    <div class="mensajes-contenedor" id="mensajesContenedor">
+                        <!-- Los mensajes se cargarán aquí -->
+                    </div>
+
+                    <div class="typing-indicator hidden" id="typingIndicator">
+                        <span id="typingUsername"></span> está escribiendo...
+                    </div>
+
+                    <div class="input-area">
+                        <input type="text" id="messageInput" placeholder="Escribe un mensaje..." maxlength="500">
+                        <button id="sendBtn" class="btn-enviar">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para nuevo chat -->
+    <div id="modalNuevoChat" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>NUEVO CHAT</h3>
+                <button class="modal-close" id="modalClose">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="buscarNuevoUsuario" placeholder="Buscar por nombre o email...">
+                <div id="usuariosDisponibles" class="usuarios-lista">
+                    <!-- Lista de usuarios disponibles -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/chat_privado.js') }}"></script>
+</body>
+</html>

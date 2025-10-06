@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPaint - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="titulo">INICIE SESION</h1>
+
+        <div id="loginAlert"></div>
+
+        <form id="loginForm" class="formulario">
+            <label for="formUsuario" class="form-label">USUARIO:</label>
+            <input id="formUsuario" name="email" placeholder="usuario@techpaint.com" type="email" required />
+
+            <label for="formPassword" class="form-label">CONTRASEÑA:</label>
+            <input id="formPassword" name="password" placeholder="Contraseña..." type="password" minlength="8" required />
+
+            <input id="formSubmit" class="boton" type="submit" value="Iniciar Sesion" />
+            <a href="/register" class="form-crear">CREAR USUARIO</a>
+        </form>
+    </div>
+
+    <script src="static/js/login.js"></script>
+</body>
+</html>

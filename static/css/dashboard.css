@@ -1,0 +1,180 @@
+/* static/css/dashboard.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #ddd;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    max-width: 900px;
+    width: 100%;
+    background-color: #111;
+    border: 3px solid #666;
+    padding: 30px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #666;
+}
+
+.titulo {
+    color: #1188ff;
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+}
+
+.subtitulo {
+    color: #999;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* Información del usuario */
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #666;
+}
+
+.user-avatar-large {
+    width: 80px;
+    height: 80px;
+    background-color: #1188ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #111;
+}
+
+.user-info h2 {
+    margin: 0 0 5px 0;
+    color: #1188ff;
+    font-size: 1.5em;
+}
+
+.user-area {
+    color: #999;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Grid de módulos */
+.modulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.modulo-card {
+    background-color: #111;
+    border: 2px solid #666;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.modulo-card:hover {
+    border-color: #1188ff;
+    transform: translateY(-5px);
+    background-color: #1a1a1a;
+}
+
+.modulo-icon {
+    font-size: 3em;
+    min-width: 60px;
+    text-align: center;
+}
+
+.modulo-content h3 {
+    color: #1188ff;
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+}
+
+.modulo-content p {
+    color: #bbb;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.modulo-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modulo-features li {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* Acciones del dashboard */
+.dashboard-actions {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #666;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 2px solid #666;
+    color: #ddd;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .modulos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modulo-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .user-welcome {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .titulo {
+        font-size: 2em;
+    }
+}
